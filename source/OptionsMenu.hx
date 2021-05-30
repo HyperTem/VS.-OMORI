@@ -22,23 +22,28 @@ class OptionsMenu extends MusicBeatState
 	var options:Array<OptionCatagory> = [
 		new OptionCatagory("Gameplay", [
 			new DFJKOption(controls),
+			new DownscrollOption("Change the layout of the strumline."),
+			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
 			#if desktop
 			new FPSCapOption("Cap your FPS (Left for -10, Right for +10. SHIFT to go faster)"),
 			#end
-			new ScrollSpeedOption("Change your scroll speed (Left for -0.1, right for +0.1. If its at 1, it will be chart dependent)"),
+			new ScrollSpeedOption("Change your scroll speed (Left for -0.1, right for +0.1. If it's at 1, it will be chart dependent)"),
 			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Milisecond Based)"),
+			new ResetButtonOption("Toggle pressing R to gameover."),
 			// new OffsetMenu("Get a note offset based off of your inputs!"),
 			new CustomizeGameplay("Drag'n'Drop Gameplay Modules around to your preference")
 		]),
-		new OptionCatagory("Appearence", [
-			new SongPositionOption("Show the songs current position (as a bar)"),
-			new DownscrollOption("Change the layout of the strumline."),
+		new OptionCatagory("Appearance", [
 			#if desktop
-			new RainbowFPSOption("Make the FPS Counter Rainbow (Only works with the FPS Counter toggeled on)"),
-			#end
+			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
+			new RainbowFPSOption("Make the FPS Counter Rainbow (Only works with the FPS Counter toggled on and Flashing Lights toggled off)"),
 			new AccuracyOption("Display accuracy information."),
-			new NPSDisplayOption("Shows your current Notes Per Second.")
+			new NPSDisplayOption("Shows your current Notes Per Second."),
+			new SongPositionOption("Show the songs current position (as a bar)"),
+			#else
+			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay.")
+			#end
 		]),
 		
 		new OptionCatagory("Misc", [
@@ -46,8 +51,9 @@ class OptionsMenu extends MusicBeatState
 			new FPSOption("Toggle the FPS Counter"),
 			new ReplayOption("View replays"),
 			#end
-			new WatermarkOption("Turn off all watermarks from the engine.")
-			
+			new FlashingLightsOption("Toggle flashing lights that can cause epileptic seizures and strain."),
+			new WatermarkOption("Enable and disable all watermarks from the engine."),
+			new BotPlay("Showcase your charts and mods with autoplay.")
 		])
 		
 	];
@@ -93,12 +99,6 @@ class OptionsMenu extends MusicBeatState
 
 	var isCat:Bool = false;
 	
-	public static function truncateFloat( number : Float, precision : Int): Float {
-		var num = number;
-		num = num * Math.pow(10, precision);
-		num = Math.round( num ) / Math.pow(10, precision);
-		return num;
-		}
 
 	override function update(elapsed:Float)
 	{
@@ -159,7 +159,7 @@ class OptionsMenu extends MusicBeatState
 					else if (FlxG.keys.pressed.LEFT)
 						FlxG.save.data.offset -= 0.1;
 					
-					versionShit.text = "Offset (Left, Right, Shift for slow): " + truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
+					versionShit.text = "Offset (Left, Right, Shift for slow): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
 				}
 			}
 			else
@@ -176,7 +176,7 @@ class OptionsMenu extends MusicBeatState
 					else if (FlxG.keys.pressed.LEFT)
 						FlxG.save.data.offset -= 0.1;
 				
-				versionShit.text = "Offset (Left, Right, Shift for slow): " + truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
+				versionShit.text = "Offset (Left, Right, Shift for slow): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
 			}
 		
 
@@ -233,8 +233,8 @@ class OptionsMenu extends MusicBeatState
 		if (isCat)
 			currentDescription = currentSelectedCat.getOptions()[curSelected].getDescription();
 		else
-			currentDescription = "Please select a catagory";
-		versionShit.text = "Offset (Left, Right, Shift for slow): " + truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
+			currentDescription = "Please select a category";
+		versionShit.text = "Offset (Left, Right, Shift for slow): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
 
 		// selector.y = (70 * curSelected) + 30;
 

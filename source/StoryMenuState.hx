@@ -25,14 +25,13 @@ class StoryMenuState extends MusicBeatState
 
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
-		['Bopeebo', 'Fresh', 'Dadbattle'],
+		['Bopeebo', 'Fresh', 'Dad Battle'],
 		['Spookeez', 'South', "Monster"],
-		['Pico', 'Philly', "Blammed"],
-		['Satin-Panties', "High", "Milf"],
-		['Cocoa', 'Eggnog', 'Winter-Horrorland'],
+		['Pico', 'Philly Nice', "Blammed"],
+		['Satin Panties', "High", "Milf"],
+		['Cocoa', 'Eggnog', 'Winter Horrorland'],
 		['Senpai', 'Roses', 'Thorns'],
 		['Headspace', 'Reverie', 'Guilty']
-	
 	];
 	var curDifficulty:Int = 1;
 
@@ -50,14 +49,13 @@ class StoryMenuState extends MusicBeatState
 	];
 
 	var weekNames:Array<String> = [
-		"How to Funk",
+		"",
 		"Daddy Dearest",
 		"Spooky Month",
 		"PICO",
 		"MOMMY MUST MURDER",
 		"RED SNOW",
-		"Hating Simulator ft. Moawling",
-		"WELCOME TO WHITE SPACE"
+		"Hating Simulator ft. Moawling"
 	];
 
 	var txtWeekTitle:FlxText;
@@ -387,14 +385,14 @@ class StoryMenuState extends MusicBeatState
 		var stringThing:Array<String> = weekData[curWeek];
 
 		for (i in stringThing)
-		{
 			txtTracklist.text += "\n" + i;
-		}
 
 		txtTracklist.text = txtTracklist.text.toUpperCase();
 
 		txtTracklist.screenCenter(X);
 		txtTracklist.x -= FlxG.width * 0.35;
+
+		txtTracklist.text += "\n";
 
 		#if !switch
 		intendedScore = Highscore.getWeekScore(curWeek, curDifficulty);

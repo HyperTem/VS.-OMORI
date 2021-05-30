@@ -28,7 +28,7 @@ import openfl.Assets;
 import Discord.DiscordClient;
 #end
 
-#if desktop
+#if cpp
 import sys.thread.Thread;
 #end
 
@@ -43,7 +43,6 @@ class TitleState extends MusicBeatState
 	var credTextShit:Alphabet;
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
-	var tyler:FlxSprite;
 
 	var curWacky:Array<String> = [];
 
@@ -221,14 +220,6 @@ class TitleState extends MusicBeatState
 		ngSpr.screenCenter(X);
 		ngSpr.antialiasing = true;
 
-		tyler = new FlxSprite(0, FlxG.height * 0.5).loadGraphic(Paths.image('tyler'));
-		add(tyler);
-		tyler.visible = false;
-		tyler.setGraphicSize(Std.int(tyler.width * 1));
-		tyler.updateHitbox();
-		tyler.screenCenter(X);
-		tyler.antialiasing = true;
-
 		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
 		FlxG.mouse.visible = false;
@@ -304,7 +295,8 @@ class TitleState extends MusicBeatState
 				NGio.unlockMedal(61034);
 			#end
 
-			titleText.animation.play('press');
+			if (FlxG.save.data.flashing)
+				titleText.animation.play('press');
 
 			FlxG.camera.flash(FlxColor.WHITE, 1);
 			FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
@@ -314,17 +306,21 @@ class TitleState extends MusicBeatState
 
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
-
 				// Get current version of Kade Engine
 
-				var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/master/version.downloadMe");
-
-				http.onData = function (data:String) {
-				  
-				  	if (!MainMenuState.kadeEngineVer.contains(data.trim()) && !OutdatedSubState.leftState && MainMenuState.nightly == "")
+				//var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/master/version.downloadMe");
+				var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/patchnotes/version.downloadMe");
+				var returnedData:Array<String> = [];
+				
+				http.onData = function (data:String)
+				{
+					returnedData[0] = data.substring(0, data.indexOf(';'));
+					returnedData[1] = data.substring(data.indexOf('-'), data.length);
+				  	if (!MainMenuState.kadeEngineVer.contains(returnedData[0].trim()) && !OutdatedSubState.leftState && MainMenuState.nightly == "")
 					{
-						trace('outdated lmao! ' + data.trim() + ' != ' + MainMenuState.kadeEngineVer);
-						OutdatedSubState.needVer = data;
+						trace('outdated lmao! ' + returnedData[0] + ' != ' + MainMenuState.kadeEngineVer);
+						OutdatedSubState.needVer = returnedData[0];
+						OutdatedSubState.currChanges = returnedData[1];
 						FlxG.switchState(new OutdatedSubState());
 					}
 					else
@@ -339,12 +335,11 @@ class TitleState extends MusicBeatState
 				}
 				
 				http.request();
-
 			});
 			// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
 		}
 
-		if (pressedEnter && !skippedIntro)
+		if (pressedEnter && !skippedIntro && initialized)
 		{
 			skipIntro();
 		}
@@ -435,29 +430,21 @@ class TitleState extends MusicBeatState
 				createCoolText([curWacky[0]]);
 			// credTextShit.visible = true;
 			case 11:
-				{
-					addMoreText(curWacky[1]);
-					// tyler easter egg :)
-					if (curWacky[1] == 'tyler')
-						tyler.visible = true;
-				}
+				addMoreText(curWacky[1]);
 			// credTextShit.text += '\nlmao';
 			case 12:
-				{
-					deleteCoolText();
-					tyler.visible = false;
-				}
+				deleteCoolText();
 			// credTextShit.visible = false;
-			// credTextShit.text = "Versus";
+			// credTextShit.text = "Friday";
 			// credTextShit.screenCenter();
 			case 13:
-				addMoreText('Versus');
+				addMoreText('Friday');
 			// credTextShit.visible = true;
 			case 14:
-				addMoreText('Omori');
+				addMoreText('Night');
 			// credTextShit.text += '\nNight';
 			case 15:
-				addMoreText('Mod'); // credTextShit.text += '\nfunkin';
+				addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
 
 			case 16:
 				skipIntro();
