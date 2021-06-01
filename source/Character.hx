@@ -497,20 +497,18 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'omori':
-			// DAD ANIMATION LOADING CODE
-				tex = Paths.getSparrowAtlas('omori/omori','shared');
+				tex = Paths.getSparrowAtlas('characters/omori','shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'Dad idle dance', 24);
-				animation.addByPrefix('singUP', 'Dad Sing Note UP', 24);
-				animation.addByPrefix('singRIGHT', 'Dad Sing Note RIGHT', 24);
-				animation.addByPrefix('singDOWN', 'Dad Sing Note DOWN', 24);
-				animation.addByPrefix('singLEFT', 'Dad Sing Note LEFT', 24);
+				animation.addByPrefix('idle', 'omori idle', 24);
+				animation.addByPrefix('singUP', 'omori up note', 24);
+				animation.addByPrefix('singRIGHT', 'omori right note', 24);
+				animation.addByPrefix('singDOWN', 'omori down note', 24);
+				animation.addByPrefix('singLEFT', 'omori left note', 24);
 
-				addOffset('idle');
-				addOffset("singUP", -6, 50);
-				addOffset("singRIGHT", 0, 27);
-				addOffset("singLEFT", -10, 10);
-				addOffset("singDOWN", 0, -30);
+				addOffset("singUP", -5, 0);
+				addOffset("singRIGHT", -25, -5);
+				addOffset("singLEFT", -15, 0);
+				addOffset("singDOWN", -5, 0);
 
 				playAnim('idle');
 		}

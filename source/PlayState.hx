@@ -736,7 +736,7 @@ class PlayState extends MusicBeatState
 					var whitespaceLightbulbShade:FlxSprite = new FlxSprite(796.75, 100).loadGraphic(Paths.image('whitespaceLightbulbShade'));
 					whitespaceLightbulbShade.setGraphicSize(Std.int(whitespaceLightbulbShade.width * 0.35), Std.int(whitespaceLightbulbShade.height * 0.75));
 					whitespaceLightbulbShade.antialiasing = true;
-					whitespaceLightbulbShade.scrollFactor.set(0.8, 0.9);
+					whitespaceLightbulbShade.scrollFactor.set(0.8, 0.8);
 					whitespaceLightbulbShade.active = false;
 					add(whitespaceLightbulbShade);
 					
@@ -747,9 +747,9 @@ class PlayState extends MusicBeatState
 					whitespaceLightbulb.active = false;
 					add(whitespaceLightbulb);
 
-					bgMewo = new BackgroundMewo(350, 750);
+					bgMewo = new BackgroundMewo(-110, 760);
 					bgMewo.setGraphicSize(Std.int(bgMewo.width * 0.85));
-					bgMewo.scrollFactor.set(1.3, 1.3);
+					bgMewo.scrollFactor.set(1.05, 1.05);
 			}
 			default:
 			{
@@ -836,6 +836,9 @@ class PlayState extends MusicBeatState
 				dad.x -= 150;
 				dad.y += 100;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'omori':
+				dad.x += 40;
+				dad.y += 140;
 		}
 
 
