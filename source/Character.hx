@@ -499,11 +499,11 @@ class Character extends FlxSprite
 			case 'omori':
 				tex = Paths.getSparrowAtlas('characters/omori','shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'omori idle', 24);
-				animation.addByPrefix('singUP', 'omori up note', 24);
-				animation.addByPrefix('singRIGHT', 'omori right note', 24);
-				animation.addByPrefix('singDOWN', 'omori down note', 24);
-				animation.addByPrefix('singLEFT', 'omori left note', 24);
+				animation.addByPrefix('idle', 'omori idle', 24, false);
+				animation.addByPrefix('singUP', 'omori up note', 24, false);
+				animation.addByPrefix('singRIGHT', 'omori right note', 24, false);
+				animation.addByPrefix('singLEFT', 'omori left note', 24, false);
+				animation.addByPrefix('singDOWN', 'omori down note', 24, false);
 
 				addOffset("singUP", -5, 0);
 				addOffset("singRIGHT", -25, -5);
