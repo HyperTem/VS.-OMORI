@@ -28,7 +28,7 @@ class MainMenuState extends MusicBeatState
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
-	var optionShit:Array<String> = ['story mode', 'freeplay', 'donate', 'options'];
+	var optionShit:Array<String> = ['story mode', 'freeplay', 'hangman', 'options'];
 	#else
 	var optionShit:Array<String> = ['story mode', 'freeplay'];
 	#end
@@ -186,6 +186,7 @@ class MainMenuState extends MusicBeatState
 							{
 								FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
 								{
+<<<<<<< Updated upstream
 									goToState();
 								});
 							}
@@ -196,6 +197,21 @@ class MainMenuState extends MusicBeatState
 									goToState();
 								});
 							}
+=======
+									case 'story mode':
+										FlxG.switchState(new StoryMenuState());
+										trace("Story Menu Selected");
+									case 'freeplay':
+										FlxG.switchState(new FreeplayState());
+
+										trace("Freeplay Menu Selected");
+									case 'hangman':
+										FlxG.switchState(new HangmanMenu());
+									case 'options':
+										FlxG.switchState(new OptionsMenu());
+								}
+							});
+>>>>>>> Stashed changes
 						}
 					});
 				}
