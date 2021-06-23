@@ -507,4 +507,30 @@
 	<SubTexture name="~0001" x="193" y="482" width="43" height="21"/>
 	<SubTexture name="~0002" x="529" y="483" width="43" height="21"/>
 	<SubTexture name="~0003" x="529" y="483" width="43" height="21"/>
+	<SubTexture name="a key0000" x="0" y="1000" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="b key0000" x="64" y="1000" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="c key0000" x="128" y="1000" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="d key0000" x="192" y="1000" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="e key0000" x="256" y="1000" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="f key0000" x="0" y="1064" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="g key0000" x="64" y="1064" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="h key0000" x="128" y="1064" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="i key0000" x="192" y="1064" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="j key0000" x="256" y="1064" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="k key0000" x="0" y="1128" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="l key0000" x="64" y="1128" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="m key0000" x="128" y="1128" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="n key0000" x="192" y="1128" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="o key0000" x="256" y="1128" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="p key0000" x="0" y="1192" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="q key0000" x="64" y="1192" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="r key0000" x="128" y="1192" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="s key0000" x="192" y="1192" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="t key0000" x="256" y="1192" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="u key0000" x="0" y="1256" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="v key0000" x="64" y="1256" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="w key0000" x="128" y="1256" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="x key0000" x="192" y="1256" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="y key0000" x="256" y="1256" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="z key0000" x="0" y="1320" width="64" height="64" pivotX="0" pivotY="0"/>
 </TextureAtlas>

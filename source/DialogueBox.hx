@@ -37,8 +37,6 @@ class DialogueBox extends FlxSpriteGroup
 
 	public var finishThing:Void->Void;
 
-	public var _waiting(default, null):FlxTypeText;
-
 	var portraitLeft:FlxSprite;
 	var portraitRight:FlxSprite;
 	var portraitOmori:FlxSprite;

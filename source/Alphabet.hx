@@ -40,13 +40,16 @@ class Alphabet extends FlxSpriteGroup
 
 	var isBold:Bool = false;
 
-	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = false, typed:Bool = false)
+	var isKeys:Bool = false;
+
+	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = false, typed:Bool = false, keys:Bool = false)
 	{
 		super(x, y);
 
 		_finalText = text;
 		this.text = text;
 		isBold = bold;
+		isKeys = keys;
 
 		if (text != "")
 		{
@@ -96,6 +99,8 @@ class Alphabet extends FlxSpriteGroup
 
 				if (isBold)
 					letter.createBold(character);
+				else if (isKeys)
+					letter.createKeys(character);
 				else
 				{
 					letter.createLetter(character);
@@ -193,6 +198,10 @@ class Alphabet extends FlxSpriteGroup
 					{
 						letter.createSymbol(splitWords[loopNum]);
 					}
+					else if (isKeys)
+					{
+						letter.createKeys(splitWords[loopNum]);
+					}
 					else
 					{
 						letter.createLetter(splitWords[loopNum]);
@@ -257,6 +266,13 @@ class AlphaCharacter extends FlxSprite
 		animation.play(letter);
 		updateHitbox();
 	}
+
+	public function createKeys(letter:String)
+		{
+			animation.addByPrefix(letter, letter.toLowerCase() + " key", 24);
+			animation.play(letter);
+			updateHitbox();
+		}
 
 	public function createLetter(letter:String):Void
 	{

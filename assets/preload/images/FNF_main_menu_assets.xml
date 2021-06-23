@@ -50,4 +50,6 @@
 	<SubTexture name="story mode white0000" x="1250" y="1032" width="796" height="173" frameX="0" frameY="-3" frameWidth="796" frameHeight="181"/>
 	<SubTexture name="story mode white0001" x="0" y="1215" width="794" height="174" frameX="-2" frameY="-2" frameWidth="796" frameHeight="181"/>
 	<SubTexture name="story mode white0002" x="804" y="1215" width="794" height="181" frameX="0" frameY="0" frameWidth="796" frameHeight="181"/>
+	<SubTexture name="hangman basic0000" x="0" y="0" width="444" height="117"/>
+	<SubTexture name="hangman white0000" x="0" y="0" width="444" height="117"/>
 </TextureAtlas>
