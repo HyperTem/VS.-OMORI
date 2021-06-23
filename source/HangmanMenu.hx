@@ -22,6 +22,7 @@ import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
+import flixel.addons.text.FlxTypeText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
 import flixel.addons.display.FlxBackdrop;
@@ -36,35 +37,60 @@ class HangmanMenu extends MusicBeatState
 
     var textTyped:Bool = false;
 
-    var camLerp:Float = 0.16;
+    var dialogueOpened:Bool = false;
+    
+    var dialogueStarted:Bool = false;
 
-    var blackBarThingie:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, 1, FlxColor.BLACK);
+    var nameLength:Int = 0;
+
+    var camLerp:Float = 0.16;
 
     var chooseName:FlxText;
 
+    var swagDialogue:FlxTypeText;
+
+    var swagDialogue2:FlxTypeText;
+
     var name:FlxUIInputText;
 
+    var hangmanTitle:Alphabet;
+
     var hangmanKeys:Alphabet;
+
+    var hangmanKeys2:Alphabet;
+
+    var box:FlxSprite;
 
     public var curName:String = "";
 
     public static var nameResult:String = "";
     public static var coming:String = "";
 
+    var bsDialogueList:Array<String> = [
+        "WARNING!! Activating this will reveal huge spoilers for OMORI's story! Please play OMORI before activating this! Press ESCAPE to leave or ENTER to keep going.",
+        "It's a long way down... do you want to jump?"
+    ];
+
     public function new()
     {
         super();
 
-		add(blackBarThingie);
-        blackBarThingie.scrollFactor.set();
-        blackBarThingie.scale.y = 750;
+        var bg:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('blankBlackboard'));
+		bg.updateHitbox();
+		bg.screenCenter();
+		bg.antialiasing = true;
+		add(bg);
 
-        chooseName = new FlxText(FlxG.width * 0.7, 5, 0, "You know what to do.", 32);
+		hangmanTitle = new Alphabet(2, 38, 'hangman', false, false, true);
+        hangmanTitle.x = 38;
+        add(hangmanTitle);
+            
+        chooseName = new FlxText(FlxG.width * 0.7, 25, 0, "You know what to do.", 32);
 		chooseName.setFormat(Paths.font("OMORI_GAME.ttf"), 32, FlxColor.WHITE, RIGHT);
 		chooseName.alignment = CENTER;
 		chooseName.setBorderStyle(OUTLINE, 0xFF000000, 5, 1);
-		chooseName.screenCenter(X);
-		chooseName.y = 38;
+		chooseName.x = 38;
+		chooseName.y = 124;
         chooseName.scrollFactor.set();
 		add(chooseName);
 
@@ -100,14 +126,35 @@ class HangmanMenu extends MusicBeatState
             if (textTyped == true)
             {
                 remove (hangmanKeys);
+                remove (hangmanKeys2);
             }
-            hangmanKeys = new Alphabet(10, 100, (name.text.toLowerCase()), false, false, true);
+
+            nameLength = name.text.length;
+
+            if (nameLength >= 11)
+            {
+            hangmanKeys = new Alphabet(3, 100, (name.text.substr(0, 11).trim()), false, false, true);
             hangmanKeys.screenCenter();
+            hangmanKeys.y = (hangmanKeys.y - 32);
             hangmanKeys.scrollFactor.set();
             add(hangmanKeys);
-            name.maxLength = 23;
-            name.lines = 2;
             textTyped = true;
+
+            hangmanKeys2 = new Alphabet(3, 100, (name.text.substr(11).trim()), false, false, true);
+            hangmanKeys2.screenCenter();
+            hangmanKeys2.y = (hangmanKeys2.y + 32);
+            hangmanKeys2.scrollFactor.set();
+            add(hangmanKeys2);
+            textTyped = true;
+            }
+            if (nameLength < 11)
+            {
+                hangmanKeys = new Alphabet(3, 100, (name.text.toLowerCase()), false, false, true);
+                hangmanKeys.screenCenter();
+                hangmanKeys.scrollFactor.set();
+                add(hangmanKeys);
+                textTyped = true;
+            }
         }
 
         switch (name.text.toLowerCase())
@@ -119,9 +166,6 @@ class HangmanMenu extends MusicBeatState
             case 'tyler':
                 trace("Tyler Mode successfully activated!");
         }
-        
-        blackBarThingie.y = 360 - blackBarThingie.height/2;
-        blackBarThingie.x = 640 - blackBarThingie.width/2;
 
         if (selectable && !goingBack)
         {
@@ -129,7 +173,6 @@ class HangmanMenu extends MusicBeatState
                 {
                     goingBack = true;
                     FlxG.sound.play(Paths.sound('cancelMenu'));
-                    FlxTween.tween(blackBarThingie, { 'scale.x': 0}, 0.5, { ease: FlxEase.expoIn});
                     FlxTween.tween(name, { 'scale.x': 0}, 0.5, { ease: FlxEase.expoIn});
                     FlxTween.tween(chooseName, { 'scale.x': 0}, 0.5, { ease: FlxEase.expoIn});
                     new FlxTimer().start(0.5, function(tmr:FlxTimer)
@@ -144,17 +187,62 @@ class HangmanMenu extends MusicBeatState
                 nameResult = name.text;
                 if (nameResult == "welcome to black space")
                 {
-                    StoryMenuState.weekUnlocked[StoryMenuState.secretWeek] = true;
-                    StoryMenuState.weekData[StoryMenuState.secretWeek] = ['Alter'];
-                    StoryMenuState.weekCharacters[StoryMenuState.secretWeek] = ['omori', 'bf', 'gf'];
-                    StoryMenuState.weekNames[StoryMenuState.secretWeek] = "Red Hands";
-                    FlxG.sound.music.stop();
-                    new FlxTimer().start(0.5, function(tmr:FlxTimer)
+                    if (bsDialogueList[1] == null && bsDialogueList[0] != null)
+                    {
+                        StoryMenuState.weekUnlocked[StoryMenuState.secretWeek] = true;
+                        StoryMenuState.weekData[StoryMenuState.secretWeek] = ['Alter'];
+                        StoryMenuState.weekCharacters[StoryMenuState.secretWeek] = ['omori', 'bf', 'gf'];
+                        StoryMenuState.weekNames[StoryMenuState.secretWeek] = "Red Hands";
+                        FlxG.sound.music.stop();
+                        remove(swagDialogue);
+                        swagDialogue = new FlxTypeText(240, 540, Std.int(FlxG.width * 0.6), (bsDialogueList[0]), 40);
+                        swagDialogue.font = 'OMORI_GAME';
+                        swagDialogue.color = 0xFFFFFFFF;
+                        swagDialogue.sounds = [FlxG.sound.load(Paths.sound('omoriText'), 0.6)];
+                        add(swagDialogue);
+                        swagDialogue.resetText(bsDialogueList[0]);
+                        swagDialogue.start(0.03, true);
+                        bsDialogueList.remove(bsDialogueList[0]);
+                        new FlxTimer().start(3.5, function(tmr:FlxTimer)
+                            {
+                                FlxG.switchState(new MainMenuState());
+                            });
+                    }
+                    else
+                    {
+                        FlxG.sound.play(Paths.sound('confirmLaptop'));
+                        new FlxTimer().start(1.5, function(tmr:FlxTimer)
                         {
-                            FlxG.switchState(new MainMenuState());
+                            {
+                                box = new FlxSprite(-20, 0);
+                                box.frames = Paths.getSparrowAtlas('omoriDialogueBox');
+                                box.animation.addByPrefix('normalOpen', 'Text Box Appear', 40, false);
+                                box.animation.addByIndices('normal', 'Text Box Appear', [10], "", 40);
+                                box.animation.play('normalOpen');
+                                box.setGraphicSize(Std.int(box.width * 0.8));
+                                box.updateHitbox();
+                                add(box);
+                                box.screenCenter(X);
+                            }
+    
+                            new FlxTimer().start(0.025, function(tmr:FlxTimer)
+                            {
+                                swagDialogue = new FlxTypeText(240, 540, Std.int(FlxG.width * 0.6), (bsDialogueList[0]), 40);
+                                swagDialogue.font = 'OMORI_GAME';
+                                swagDialogue.color = 0xFFFFFFFF;
+                                swagDialogue.sounds = [FlxG.sound.load(Paths.sound('omoriText'), 0.6)];
+                                add(swagDialogue);
+                                swagDialogue.resetText(bsDialogueList[0]);
+                                swagDialogue.start(0.03, true);
+                                bsDialogueList.remove(bsDialogueList[0]);
+                            });
                         });
+                    }
                 }
-            FlxG.switchState(new MainMenuState());
+                else
+                {
+                    FlxG.switchState(new MainMenuState());
+                }
             }
         }
     }
