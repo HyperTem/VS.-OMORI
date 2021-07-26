@@ -497,13 +497,29 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'omori':
-				tex = Paths.getSparrowAtlas('characters/omori','shared');
+				tex = Paths.getSparrowAtlas('characters/omori_assets','shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'omori idle', 24, false);
 				animation.addByPrefix('singUP', 'omori up note', 24, false);
 				animation.addByPrefix('singRIGHT', 'omori right note', 24, false);
 				animation.addByPrefix('singLEFT', 'omori left note', 24, false);
 				animation.addByPrefix('singDOWN', 'omori down note', 24, false);
+
+				addOffset("singUP", -5, 0);
+				addOffset("singRIGHT", -25, -5);
+				addOffset("singLEFT", -15, 0);
+				addOffset("singDOWN", -5, 0);
+
+				playAnim('idle');
+
+			case 'furiousomori':
+				tex = Paths.getSparrowAtlas('characters/furiousomori_assets','shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'furious idle', 24, false);
+				animation.addByPrefix('singUP', 'furious up note', 24, false);
+				animation.addByPrefix('singRIGHT', 'furious right note', 24, false);
+				animation.addByPrefix('singLEFT', 'furious left note', 24, false);
+				animation.addByPrefix('singDOWN', 'furious down note', 24, false);
 
 				addOffset("singUP", -5, 0);
 				addOffset("singRIGHT", -25, -5);

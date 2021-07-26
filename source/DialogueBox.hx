@@ -63,6 +63,9 @@ class DialogueBox extends FlxSpriteGroup
 			case 'headspace':
 				FlxG.sound.playMusic(Paths.music('white_space'), 0);
 				FlxG.sound.music.fadeIn(5, 0, 1);
+			case 'reverie':
+				FlxG.sound.playMusic(Paths.music('spaces_in-between'), 0);
+				FlxG.sound.music.fadeIn(1, 0, 0.8);
 		}
 
 		if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
@@ -108,6 +111,18 @@ class DialogueBox extends FlxSpriteGroup
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
 			case 'headspace':
+				box = new FlxSprite(-20, 0);
+				hasDialog = true;
+				box.frames = Paths.getSparrowAtlas('omori/UI/dialogueBox');
+				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 40, false);
+				box.animation.addByIndices('normal', 'Text Box Appear', [10], "", 40);
+			case 'reverie':
+				box = new FlxSprite(-20, 0);
+				hasDialog = true;
+				box.frames = Paths.getSparrowAtlas('omori/UI/dialogueBox');
+				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 40, false);
+				box.animation.addByIndices('normal', 'Text Box Appear', [10], "", 40);
+			case 'guilty':
 				box = new FlxSprite(-20, 0);
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('omori/UI/dialogueBox');
@@ -170,7 +185,7 @@ class DialogueBox extends FlxSpriteGroup
 			var handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
 			add(handSelect);
 		}
-		if (PlayState.SONG.song.toLowerCase() == 'headspace')
+		if (PlayState.SONG.song.toLowerCase() == 'headspace' || PlayState.SONG.song.toLowerCase() == 'reverie' || PlayState.SONG.song.toLowerCase() == 'guilty')
 		{
 			var handSelect:FlxSprite = new FlxSprite(995, 640).loadGraphic(Paths.image('omori/UI/redHandTextbox'));
 			handSelect.setGraphicSize(Std.int(handSelect.width * 1.5));
@@ -270,7 +285,7 @@ class DialogueBox extends FlxSpriteGroup
 							dropText.alpha = swagDialogue.alpha;
 						}, 5);
 					}
-					if (PlayState.SONG.song.toLowerCase() == 'headspace')
+					if (PlayState.SONG.song.toLowerCase() == 'headspace' || PlayState.SONG.song.toLowerCase() == 'reverie' || PlayState.SONG.song.toLowerCase() == 'guilty')
 					{
 						FlxG.sound.music.stop();
 

@@ -31,7 +31,7 @@ class StoryMenuState extends MusicBeatState
 		['Satin Panties', "High", "Milf"],
 		['Cocoa', 'Eggnog', 'Winter Horrorland'],
 		['Senpai', 'Roses', 'Thorns'],
-		['Headspace', 'Reverie', 'Guilty'],
+		['Guilty', 'Reverie', 'Guilty'],
 		['']
 	];
 	var curDifficulty:Int = 1;
@@ -58,6 +58,7 @@ class StoryMenuState extends MusicBeatState
 		"MOMMY MUST MURDER",
 		"RED SNOW",
 		"Hating Simulator ft. Moawling",
+		"Welcome to Funk Space",
 		""
 	];
 
