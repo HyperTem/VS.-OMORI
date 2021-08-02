@@ -30,12 +30,16 @@ class FreeplayState extends MusicBeatState
 	var lerpScore:Int = 0;
 	var intendedScore:Int = 0;
 
+	var hudHide:FlxSprite;
+	var hudHidden:Bool = false;
+	var hudHideCreated:Bool = false;
+
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
 
 	private var iconArray:Array<HealthIcon> = [];
 
-	override function create()
+	override public function create()
 	{
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
 
@@ -68,7 +72,7 @@ class FreeplayState extends MusicBeatState
 
 		// LOAD CHARACTERS
 
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGBlue'));
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('omoriMenuBG'));
 		add(bg);
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
@@ -88,7 +92,7 @@ class FreeplayState extends MusicBeatState
 			iconArray.push(icon);
 			add(icon);
 
-			// songText.x += 40;
+			songText.x += 400;
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
 			// songText.screenCenter(X);
 		}
@@ -161,7 +165,7 @@ class FreeplayState extends MusicBeatState
 		}
 	}
 
-	override function update(elapsed:Float)
+	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
 

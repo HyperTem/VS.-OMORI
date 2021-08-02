@@ -42,6 +42,8 @@ class DialogueBox extends FlxSpriteGroup
 	var portraitOmori:FlxSprite;
 	var portraitBoyfriend:FlxSprite;
 
+	var headspaceCutscene:FlxSprite;
+
 	var handSelect:FlxSprite;
 	var omoriTransitionSprite:FlxSprite;
 	var bgFade:FlxSprite;
@@ -51,6 +53,19 @@ class DialogueBox extends FlxSpriteGroup
 	public function new(talkingRight:Bool = true, ?dialogueList:Array<String>)
 	{
 		super();
+
+		if (PlayState.SONG.song.toLowerCase() == 'headspace')
+		{
+			headspaceCutscene = new FlxSprite(0, 40);
+			headspaceCutscene.frames = Paths.getSparrowAtlas('omori/headspaceCutscene');
+			headspaceCutscene.animation.addByPrefix('bump', 'logo bumpin', 3);
+			headspaceCutscene.setGraphicSize(Std.int((headspaceCutscene.width / 1.2) * 0.8));
+			headspaceCutscene.updateHitbox();
+			add(headspaceCutscene);
+			headspaceCutscene.animation.play('bump');
+			headspaceCutscene.screenCenter();
+			
+		}
 
 		switch (PlayState.SONG.song.toLowerCase())
 		{
@@ -135,32 +150,64 @@ class DialogueBox extends FlxSpriteGroup
 		if (!hasDialog)
 			return;
 		
-		portraitLeft = new FlxSprite(-20, 40);
-		portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
-		portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
-		portraitLeft.updateHitbox();
-		portraitLeft.scrollFactor.set();
-		add(portraitLeft);
-		portraitLeft.visible = false;
+		if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
+		{
+			portraitLeft = new FlxSprite(-20, 40);
+			portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+			portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+			portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+			portraitLeft.updateHitbox();
+			portraitLeft.scrollFactor.set();
+			add(portraitLeft);
+			portraitLeft.visible = false;
 
-		portraitRight = new FlxSprite(0, 40);
-		portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
-		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
-		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
-		portraitRight.updateHitbox();
-		portraitRight.scrollFactor.set();
-		add(portraitRight);
-		portraitRight.visible = false;
+			portraitRight = new FlxSprite(0, 40);
+			portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
+			portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
+			portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
+			portraitRight.updateHitbox();
+			portraitRight.scrollFactor.set();
+			add(portraitRight);
+			portraitRight.visible = false;
 
-		portraitOmori = new FlxSprite(-20, 40);
-		portraitOmori.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
-		portraitOmori.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-		portraitOmori.setGraphicSize(Std.int(portraitOmori.width * PlayState.daPixelZoom * 0.9));
-		portraitOmori.updateHitbox();
-		portraitOmori.scrollFactor.set();
-		add(portraitOmori);
-		portraitOmori.visible = false;
+			portraitOmori = new FlxSprite(-20, 40);
+			portraitOmori.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+			portraitOmori.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+			portraitOmori.setGraphicSize(Std.int(portraitOmori.width * PlayState.daPixelZoom * 0.9));
+			portraitOmori.updateHitbox();
+			portraitOmori.scrollFactor.set();
+			add(portraitOmori);
+			portraitOmori.visible = false;
+		}
+		else
+		{
+			portraitLeft = new FlxSprite(-20, 40);
+			portraitLeft.frames = Paths.getSparrowAtlas('omori/senpaiPortrait');
+			portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+			portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+			portraitLeft.updateHitbox();
+			portraitLeft.scrollFactor.set();
+			add(portraitLeft);
+			portraitLeft.visible = false;
+
+			portraitRight = new FlxSprite(-20, 0).loadGraphic(Paths.image('omori/bfPortrait'));
+			portraitRight.setGraphicSize(Std.int(portraitRight.width * 0.8));
+			portraitRight.updateHitbox();
+			portraitRight.scrollFactor.set();
+			add(portraitRight);
+			portraitRight.screenCenter();
+			
+			portraitRight.visible = false;
+
+			portraitOmori = new FlxSprite(-20, 40);
+			portraitOmori.frames = Paths.getSparrowAtlas('omori/senpaiPortrait');
+			portraitOmori.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+			portraitOmori.setGraphicSize(Std.int(portraitOmori.width * PlayState.daPixelZoom * 0.9));
+			portraitOmori.updateHitbox();
+			portraitOmori.scrollFactor.set();
+			add(portraitOmori);
+			portraitOmori.visible = false;
+		}
 
 		if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
 		{
@@ -185,7 +232,7 @@ class DialogueBox extends FlxSpriteGroup
 			var handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
 			add(handSelect);
 		}
-		if (PlayState.SONG.song.toLowerCase() == 'headspace' || PlayState.SONG.song.toLowerCase() == 'reverie' || PlayState.SONG.song.toLowerCase() == 'guilty')
+		else
 		{
 			var handSelect:FlxSprite = new FlxSprite(995, 640).loadGraphic(Paths.image('omori/UI/redHandTextbox'));
 			handSelect.setGraphicSize(Std.int(handSelect.width * 1.5));
@@ -201,32 +248,44 @@ class DialogueBox extends FlxSpriteGroup
 			// box.flipX = true;
 		}
 
-		dropText = new FlxText(242, 542, Std.int(FlxG.width * 0.6), "", 40);
-		dropText.font = 'OMORI_GAME';
-		dropText.color = 0x000000;
-		add(dropText);
-
 		if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
 		{
-			swagDialogue = new FlxTypeText(240, 540, Std.int(FlxG.width * 0.6), "", 40);
-			swagDialogue.font = 'OMORI_GAME';
-			swagDialogue.color = 0xFFFFFFFF;
-			swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
+			dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 32);
+			dropText.font = 'Pixel Arial 11 Bold';
+			dropText.color = 0xFFD89494;
+			add(dropText);
+	
+			swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 32);
+			swagDialogue.font = 'Pixel Arial 11 Bold';
+			swagDialogue.color = 0xFF3F2021;
+			swagDialogue.sounds = [FlxG.sound.load(Paths.sound('assets/sounds/pixelText'), 0.6)];
 			add(swagDialogue);
+
+			dialogue = new Alphabet(0, 80, "", false, true);
 		}
 		else
 		{
+			dropText = new FlxText(242, 542, Std.int(FlxG.width * 0.6), "", 40);
+			dropText.font = 'OMORI_GAME';
+			dropText.color = 0x000000;
+			add(dropText);
+
 			swagDialogue = new FlxTypeText(240, 540, Std.int(FlxG.width * 0.6), "", 40);
 			swagDialogue.font = 'OMORI_GAME';
 			swagDialogue.color = 0xFFFFFFFF;
 			swagDialogue.sounds = [FlxG.sound.load(Paths.sound('omoriText'), 0.6)];
 			add(swagDialogue);
+
+			dialogue = new Alphabet(0, 200, "", false, true);
 		}
 		// Please refer to StoryMenuState.hx to understand how I felt after
 		// spending 6 hours attempting to randomly pitch the text noise, only
 		// to find out that such an effect is impossible in OpenFL. :]
 
-		dialogue = new Alphabet(0, 200, "", false, true);
+		// Me from a lot later here! I looked back at StoryMenuState.hx and
+		// couldn't find that message. Idk if it's still there, but good luck
+		// looking for it...
+
 		// dialogue.x = 90;
 		// add(dialogue);
 	}
@@ -342,7 +401,8 @@ class DialogueBox extends FlxSpriteGroup
 				if (!portraitRight.visible)
 				{
 					portraitRight.visible = true;
-					portraitRight.animation.play('enter');
+					if (PlayState.SONG.song.toLowerCase() == 'headspace' || PlayState.SONG.song.toLowerCase() == 'reverie' || PlayState.SONG.song.toLowerCase() == 'guilty')
+						portraitRight.animation.play('enter');
 				}
 			case 'narrator':
 				portraitLeft.visible = false;

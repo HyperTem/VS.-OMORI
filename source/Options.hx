@@ -73,6 +73,98 @@ class Option
 
 
 
+class AltMenuOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		if(FlxG.save.data.altMenuUnlocked)
+			description = "Change the menu theme.";
+		else if(FlxG.save.data.altMenu && !FlxG.save.data.altMenuUnlocked)
+			description = "Finish ALTER to unlock this option.";
+		else
+			description = desc;
+	}
+
+	public override function press():Bool
+	{
+		if(FlxG.save.data.altMenuUnlocked)
+		{
+			FlxG.save.data.altMenu = !FlxG.save.data.altMenu;
+			if (FlxG.save.data.altMenu)
+			{
+				FlxG.sound.music.stop();
+				FlxG.sound.playMusic(Paths.music('altMenu'), 0.7);
+				FlxG.sound.music.play();
+			}
+			else
+			{
+				FlxG.sound.music.stop();
+				FlxG.sound.playMusic(Paths.music('funkSpaceMenu'), 0);
+				FlxG.sound.music.fadeIn(1, 0, 0.7);
+			}
+			display = updateDisplay();
+			return true;
+		}
+		else
+		{
+			display = updateDisplay();
+			return true;
+		}
+	}
+
+	private override function updateDisplay():String
+	{
+		if(FlxG.save.data.altMenuUnlocked)
+		{
+			return FlxG.save.data.altMenu ? "ALTER" : "FUNK SPACE";
+		}
+		else
+		{
+			return FlxG.save.data.altMenu ? "Locked" : "Locked";
+		}
+	}
+}
+
+class StickyMewoOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		if(FlxG.save.data.stickyMewoUnlocked)
+			description = "Toggle the Sticky skin for Mewo!";
+		else
+			description = desc;
+	}
+
+	public override function press():Bool
+	{
+		if(FlxG.save.data.stickyMewoUnlocked)
+		{
+			FlxG.save.data.stickyMewo = !FlxG.save.data.stickyMewo;
+			display = updateDisplay();
+			return true;
+		}
+		else
+		{
+			display = updateDisplay();
+			return true;
+		}
+	}
+
+	private override function updateDisplay():String
+	{
+		if(FlxG.save.data.stickyMewoUnlocked)
+		{
+			return FlxG.save.data.stickyMewo ? "Sticky Mewo" : "Standard Mewo";
+		}
+		else
+		{
+			return FlxG.save.data.stickyMewo ? "Locked" : "Locked";
+		}
+	}
+}
+
 class DFJKOption extends Option
 {
 	private var controls:Controls;

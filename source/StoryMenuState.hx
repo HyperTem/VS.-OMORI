@@ -31,8 +31,7 @@ class StoryMenuState extends MusicBeatState
 		['Satin Panties', "High", "Milf"],
 		['Cocoa', 'Eggnog', 'Winter Horrorland'],
 		['Senpai', 'Roses', 'Thorns'],
-		['Guilty', 'Reverie', 'Guilty'],
-		['']
+		['Headspace', 'Reverie', 'Guilty']
 	];
 	var curDifficulty:Int = 1;
 
@@ -46,8 +45,7 @@ class StoryMenuState extends MusicBeatState
 		['mom', 'bf', 'gf'],
 		['parents-christmas', 'bf', 'gf'],
 		['senpai', 'bf', 'gf'],
-		['omori', 'bf', 'gf'],
-		['', 'bf', 'gf']
+		['omori', 'bf', 'gf']
 	];
 
 	public static var weekNames:Array<String> = [
@@ -58,8 +56,7 @@ class StoryMenuState extends MusicBeatState
 		"MOMMY MUST MURDER",
 		"RED SNOW",
 		"Hating Simulator ft. Moawling",
-		"Welcome to Funk Space",
-		""
+		"Welcome to Funk Space"
 	];
 
 	var txtWeekTitle:FlxText;
@@ -82,6 +79,14 @@ class StoryMenuState extends MusicBeatState
 
 	override function create()
 	{
+		if(FlxG.save.data.alterUnlocked)
+		{
+			weekUnlocked[secretWeek] = true;
+            weekData[secretWeek] = ['Alter'];
+            weekCharacters[secretWeek] = ['omori', 'bf', 'gf'];
+            weekNames[secretWeek] = "Red Hands";
+		}
+		
 		#if windows
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Story Mode Menu", null);

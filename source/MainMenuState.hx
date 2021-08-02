@@ -54,7 +54,16 @@ class MainMenuState extends MusicBeatState
 
 		if (!FlxG.sound.music.playing)
 		{
-			FlxG.sound.playMusic(Paths.music('freakyMenu'));
+			if(FlxG.save.data.altMenu)
+			{
+				FlxG.sound.playMusic(Paths.music('altMenu'), 0.7);
+				FlxG.sound.music.play();
+			}
+			else
+			{
+				FlxG.sound.playMusic(Paths.music('funkSpaceMenu'), 0);
+				FlxG.sound.music.fadeIn(1, 0, 0.7);
+			}
 		}
 
 		persistentUpdate = persistentDraw = true;
@@ -79,9 +88,20 @@ class MainMenuState extends MusicBeatState
 		magenta.screenCenter();
 		magenta.visible = false;
 		magenta.antialiasing = true;
-		magenta.color = 0xFFfd719b;
 		add(magenta);
 		// magenta.scrollFactor.set();
+
+		var omoriMenu:FlxSprite = new FlxSprite(0, 0);
+		omoriMenu.frames = Paths.getSparrowAtlas('omoriMenu');
+		omoriMenu.antialiasing = true;
+		omoriMenu.animation.addByPrefix('bump', 'logo bumpin', 4);
+		omoriMenu.animation.play('bump');
+		omoriMenu.setGraphicSize(Std.int(omoriMenu.width * 0.3));
+		omoriMenu.updateHitbox();
+		omoriMenu.screenCenter();
+		add(omoriMenu);
+		omoriMenu.scrollFactor.set(0, 0.05);
+		omoriMenu.x -= 420;
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
@@ -98,11 +118,11 @@ class MainMenuState extends MusicBeatState
 			menuItem.ID = i;
 			menuItem.screenCenter(X);
 			menuItems.add(menuItem);
-			menuItem.scrollFactor.set();
+			menuItem.scrollFactor.set(0, 0.15);
 			menuItem.antialiasing = true;
 		}
 
-		FlxG.camera.follow(camFollow, null, 0.60 * (60 / FlxG.save.data.fpsCap));
+		FlxG.camera.follow(camFollow, null, 0.06 * (60 / FlxG.save.data.fpsCap));
 
 		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, gameVer +  (Main.watermarks ? " FNF - " + kadeEngineVer + " Kade Engine" : ""), 12);
 		versionShit.scrollFactor.set();
@@ -207,6 +227,7 @@ class MainMenuState extends MusicBeatState
 		menuItems.forEach(function(spr:FlxSprite)
 		{
 			spr.screenCenter(X);
+			spr.x += 200;
 		});
 	}
 	

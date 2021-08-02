@@ -1,5 +1,7 @@
 package;
 
+import lime.system.System;
+import sys.FileSystem;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -163,6 +165,17 @@ class TitleState extends MusicBeatState
 		// bg.updateHitbox();
 		add(bg);
 
+		// load bearing Goldlewis Dickinson
+		if (sys.FileSystem.exists(Paths.image('goldlewisDickinson')))
+		{
+			// do fucking nothing
+		}
+		else
+		{
+			// CRASH THE GAME LMAOOOOOOO
+			System.exit(0);
+		}
+
 		logoBl = new FlxSprite(-150, -100);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 		logoBl.antialiasing = true;
@@ -300,6 +313,7 @@ class TitleState extends MusicBeatState
 
 			FlxG.camera.flash(FlxColor.WHITE, 1);
 			FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
+			FlxG.sound.music.fadeOut(1, 0);
 
 			transitioning = true;
 			// FlxG.sound.music.stop();
@@ -309,6 +323,7 @@ class TitleState extends MusicBeatState
 				// Get current version of Kade Engine
 
 				//var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/master/version.downloadMe");
+				FlxG.sound.music.stop();
 				var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/patchnotes/version.downloadMe");
 				var returnedData:Array<String> = [];
 				

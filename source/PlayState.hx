@@ -107,6 +107,8 @@ class PlayState extends MusicBeatState
 	public static var gf:Character;
 	public static var boyfriend:Boyfriend;
 
+	public static var furious:Character;
+
 	public var notes:FlxTypedGroup<Note>;
 	private var unspawnNotes:Array<Note> = [];
 
@@ -145,6 +147,7 @@ class PlayState extends MusicBeatState
 
 	private var iconP1:HealthIcon;
 	private var iconP2:HealthIcon;
+	private var furiousIcon:HealthIcon;
 	public var camHUD:FlxCamera;
 	private var camGame:FlxCamera;
 
@@ -799,8 +802,10 @@ class PlayState extends MusicBeatState
 
 		gf = new Character(400, 130, gfVersion);
 		gf.scrollFactor.set(0.95, 0.95);
-
+		
 		dad = new Character(100, 100, SONG.player2);
+
+		furious = new Character(100, 100, 'furiousomori');
 
 		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
 
@@ -841,8 +846,11 @@ class PlayState extends MusicBeatState
 				dad.y += 100;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case 'omori':
-				dad.x += 40;
-				dad.y += 140;
+				dad.x += 145;
+				dad.y += 150;
+			case 'furiousomori':
+				dad.x += 142;
+				dad.y += 168;
 		}
 
 
@@ -1037,12 +1045,16 @@ class PlayState extends MusicBeatState
 		iconP2.y = healthBar.y - (iconP2.height / 2);
 		add(iconP2);
 
+		furiousIcon = new HealthIcon('furiousomori');
+		furiousIcon.y = healthBar.y - (furiousIcon.height / 2);
+
 		strumLineNotes.cameras = [camHUD];
 		notes.cameras = [camHUD];
 		healthBar.cameras = [camHUD];
 		healthBarBG.cameras = [camHUD];
 		iconP1.cameras = [camHUD];
 		iconP2.cameras = [camHUD];
+		furiousIcon.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
 		if (FlxG.save.data.songPosition)
@@ -2350,6 +2362,14 @@ class PlayState extends MusicBeatState
 
 						var altAnim:String = "";
 	
+
+						if(dad.curCharacter == "furiousomori" && curStep >= 1408 && FlxG.random.int(1, 15) == 2)
+							{
+								//Code for QT's random "glitch" alt animation to play, stolen from VS QT. Owned >:3
+								//Really didn't think it'd be that simple but if it works, it works
+								altAnim = '-alt';
+							}
+
 						if (SONG.notes[Math.floor(curStep / 16)] != null)
 						{
 							if (SONG.notes[Math.floor(curStep / 16)].altAnim)
@@ -3460,6 +3480,90 @@ class PlayState extends MusicBeatState
 		{
 			FlxG.camera.zoom += 0.015;
 			camHUD.zoom += 0.03;
+		}
+
+		// Hardcoding for Guilty! stuff because I don't know how lua modcharting works lol
+		if (curSong.toLowerCase() == 'guilty' && curStep == 560 && dad != furious)
+		{
+			replace(dad, furious);
+			dad = furious;
+			dad.x += 142;
+			dad.y += 168;
+			camFollow.setPosition(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
+
+			furiousIcon.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (furiousIcon.width - 26);
+			furiousIcon.animation.curAnim.curFrame = iconP2.animation.curAnim.curFrame;
+			furiousIcon.scale.set(iconP2.scale.x, iconP2.scale.y);
+			furiousIcon.updateHitbox();
+
+			replace(iconP2, furiousIcon);
+			iconP2 = furiousIcon;
+		}
+		if (curSong.toLowerCase() == 'guilty' && curStep == 544)
+		{
+			var annoy1 = new FlxSprite(0, 0);
+			annoy1.frames = Paths.getSparrowAtlas('omori/annoy');
+			annoy1.animation.addByPrefix('bump', 'logo bumpin', 24, false);
+			annoy1.setGraphicSize(Std.int((annoy1.width) * 2));
+			annoy1.screenCenter();
+			annoy1.x -= 230;
+			annoy1.y += 350;
+			add(annoy1);
+			annoy1.animation.play('bump');
+			FlxG.sound.play(Paths.sound('annoy'));
+		}
+		if (curSong.toLowerCase() == 'guilty' && curStep == 548)
+		{
+			var annoy2 = new FlxSprite(0, 0);
+			annoy2.frames = Paths.getSparrowAtlas('omori/annoy');
+			annoy2.animation.addByPrefix('bump', 'logo bumpin', 24, false);
+			annoy2.setGraphicSize(Std.int((annoy2.width) * 2));
+			annoy2.screenCenter();
+			annoy2.x -= 200;
+			annoy2.y += 240;
+			add(annoy2);
+			annoy2.animation.play('bump');
+		}
+		if (curSong.toLowerCase() == 'guilty' && curStep == 552)
+		{
+			var annoy3 = new FlxSprite(0, 0);
+			annoy3.frames = Paths.getSparrowAtlas('omori/annoy');
+			annoy3.animation.addByPrefix('bump', 'logo bumpin', 24, false);
+			annoy3.setGraphicSize(Std.int((annoy3.width) * 2));
+			annoy3.screenCenter();
+			annoy3.x -= 280;
+			annoy3.y += 170;
+			add(annoy3);
+			annoy3.animation.play('bump');
+		}
+		if (curSong.toLowerCase() == 'guilty' && curStep == 556)
+		{
+			var annoy4 = new FlxSprite(0, 0);
+			annoy4.frames = Paths.getSparrowAtlas('omori/annoy');
+			annoy4.animation.addByPrefix('bump', 'logo bumpin', 24, false);
+			annoy4.setGraphicSize(Std.int((annoy4.width) * 2));
+			annoy4.screenCenter();
+			annoy4.x -= 230;
+			annoy4.y += 50;
+			add(annoy4);
+			annoy4.animation.play('bump');
+		}
+		if (curSong.toLowerCase() == 'guilty' && curStep == 2777)
+		{
+			var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
+			add(blackScreen);
+			blackScreen.scrollFactor.set();
+			camHUD.visible = false;
+		}
+		if (curSong.toLowerCase() == 'guilty' && curStep >= 1408 && curStep < 1664 && camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0)
+		{
+			FlxG.camera.zoom += 0.015;
+			camHUD.zoom += 0.03;
+		}
+		if (curSong.toLowerCase() == 'guilty' && curStep >= 1664 && curStep < 1936 && camZooming && FlxG.camera.zoom < 1.35)
+		{
+			FlxG.camera.zoom += 0.020;
+			camHUD.zoom += 0.045;
 		}
 
 		if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0)

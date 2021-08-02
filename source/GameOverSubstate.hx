@@ -11,6 +11,7 @@ class GameOverSubstate extends MusicBeatSubstate
 {
 	var bf:Boyfriend;
 	var camFollow:FlxObject;
+	var alreadyPressed:Bool = false;
 
 	var stageSuffix:String = "";
 
@@ -52,7 +53,7 @@ class GameOverSubstate extends MusicBeatSubstate
 	{
 		super.update(elapsed);
 
-		if (controls.ACCEPT)
+		if (controls.ACCEPT && alreadyPressed == false)
 		{
 			endBullshit();
 		}

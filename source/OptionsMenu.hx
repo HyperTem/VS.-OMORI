@@ -20,6 +20,10 @@ class OptionsMenu extends MusicBeatState
 	var curSelected:Int = 0;
 
 	var options:Array<OptionCatagory> = [
+		new OptionCatagory("Easter Eggs", [
+			new AltMenuOption("Locked..."),
+			new StickyMewoOption("Locked...")
+		]),
 		new OptionCatagory("Gameplay", [
 			new DFJKOption(controls),
 			new DownscrollOption("Change the layout of the strumline."),
@@ -66,9 +70,8 @@ class OptionsMenu extends MusicBeatState
 
 	override function create()
 	{
-		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image("menuDesat"));
+		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image("omoriMenuBG"));
 
-		menuBG.color = 0xFFea71fd;
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
 		menuBG.updateHitbox();
 		menuBG.screenCenter();

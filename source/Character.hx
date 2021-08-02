@@ -505,10 +505,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', 'omori left note', 24, false);
 				animation.addByPrefix('singDOWN', 'omori down note', 24, false);
 
-				addOffset("singUP", -5, 0);
-				addOffset("singRIGHT", -25, -5);
-				addOffset("singLEFT", -15, 0);
-				addOffset("singDOWN", -5, 0);
+				addOffset("singUP", 75, 18);
+				addOffset("singRIGHT", -15, -10);
+				addOffset("singLEFT", 40, 4);
+				addOffset("singDOWN", -26, -43);
 
 				playAnim('idle');
 
@@ -521,10 +521,21 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', 'furious left note', 24, false);
 				animation.addByPrefix('singDOWN', 'furious down note', 24, false);
 
-				addOffset("singUP", -5, 0);
-				addOffset("singRIGHT", -25, -5);
-				addOffset("singLEFT", -15, 0);
-				addOffset("singDOWN", -5, 0);
+				animation.addByPrefix('idle-alt', 'glitch idle', 24, false);
+				animation.addByPrefix('singUP-alt', 'glitch up note', 24, false);
+				animation.addByPrefix('singRIGHT-alt', 'glitch right note', 24, false);
+				animation.addByPrefix('singLEFT-alt', 'glitch left note', 24, false);
+				animation.addByPrefix('singDOWN-alt', 'glitch down note', 24, false);
+
+				addOffset("singUP", 65, 30);
+				addOffset("singRIGHT", -52, 15);
+				addOffset("singLEFT", 35, 18);
+				addOffset("singDOWN", -28, -30);
+
+				addOffset("singUP-alt", 82, 30);
+				addOffset("singRIGHT-alt", -13, 15);
+				addOffset("singLEFT-alt", 61, 18);
+				addOffset("singDOWN-alt", -2, -30);
 
 				playAnim('idle');
 		}
@@ -569,6 +580,7 @@ class Character extends FlxSprite
 				dadVar = 6.1;
 			if (holdTimer >= Conductor.stepCrochet * dadVar * 0.001)
 			{
+				trace('dance');
 				dance();
 				holdTimer = 0;
 			}
