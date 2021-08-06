@@ -1,0 +1,3 @@
+The other standard weeks are removed, 'week7' is renamed into 'omori', and also omori is now week1, only tutorial is kept as a reference/placeholder
+
+The extra 'omori' subfolder inside of images folder of original week7 is removed to solve the conflict of the code

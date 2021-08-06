@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="furiousomori_assets.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="furious down note0000" x="10" y="10" width="256" height="556" frameX="0" frameY="0" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0001" x="10" y="10" width="256" height="556" frameX="0" frameY="0" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0002" x="276" y="10" width="257" height="553" frameX="0" frameY="-3" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0003" x="276" y="10" width="257" height="553" frameX="0" frameY="-3" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0004" x="543" y="10" width="278" height="544" frameX="-2" frameY="-12" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0005" x="543" y="10" width="278" height="544" frameX="-2" frameY="-12" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0006" x="831" y="10" width="261" height="552" frameX="-2" frameY="-4" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0007" x="831" y="10" width="261" height="552" frameX="-2" frameY="-4" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0008" x="1102" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0009" x="1102" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0010" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0011" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0012" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0013" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0014" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0015" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0016" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0017" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0018" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0019" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0020" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0021" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0022" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0023" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious down note0024" x="1380" y="10" width="268" height="549" frameX="-2" frameY="-7" frameWidth="280" frameHeight="556"/>
+	<SubTexture name="furious idle0000" x="1658" y="10" width="276" height="582" frameX="-2" frameY="-6" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0001" x="1658" y="10" width="276" height="582" frameX="-2" frameY="-6" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0002" x="1944" y="10" width="278" height="580" frameX="0" frameY="-8" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0003" x="1944" y="10" width="278" height="580" frameX="0" frameY="-8" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0004" x="2232" y="10" width="267" height="583" frameX="-11" frameY="-5" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0005" x="2232" y="10" width="267" height="583" frameX="-11" frameY="-5" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0006" x="2509" y="10" width="265" height="588" frameX="-11" frameY="0" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0007" x="2784" y="10" width="266" height="588" frameX="-10" frameY="0" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0008" x="3060" y="10" width="268" height="588" frameX="-9" frameY="0" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0009" x="3338" y="10" width="269" height="588" frameX="-8" frameY="0" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0010" x="3617" y="10" width="270" height="588" frameX="-7" frameY="0" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0011" x="10" y="608" width="269" height="588" frameX="-8" frameY="0" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0012" x="289" y="608" width="270" height="588" frameX="-7" frameY="0" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious idle0013" x="569" y="608" width="269" height="588" frameX="-8" frameY="0" frameWidth="278" frameHeight="588"/>
+	<SubTexture name="furious left note0000" x="848" y="608" width="252" height="595" frameX="-21" frameY="-4" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0001" x="848" y="608" width="252" height="595" frameX="-21" frameY="-4" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0002" x="1110" y="608" width="268" height="606" frameX="-3" frameY="0" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0003" x="1110" y="608" width="268" height="606" frameX="-3" frameY="0" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0004" x="1388" y="608" width="287" height="600" frameX="0" frameY="-6" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0005" x="1388" y="608" width="287" height="600" frameX="0" frameY="-6" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0006" x="1685" y="608" width="268" height="605" frameX="-7" frameY="-1" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0007" x="1685" y="608" width="268" height="605" frameX="-7" frameY="-1" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0008" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0009" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0010" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0011" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0012" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0013" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0014" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0015" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0016" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0017" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0018" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0019" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0020" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0021" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0022" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0023" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious left note0024" x="1963" y="608" width="273" height="603" frameX="-5" frameY="-3" frameWidth="287" frameHeight="606"/>
+	<SubTexture name="furious right note0000" x="2246" y="608" width="310" height="600" frameX="0" frameY="-4" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0001" x="2246" y="608" width="310" height="600" frameX="0" frameY="-4" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0002" x="2566" y="608" width="308" height="604" frameX="-1" frameY="0" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0003" x="2566" y="608" width="308" height="604" frameX="-1" frameY="0" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0004" x="2884" y="608" width="329" height="599" frameX="-1" frameY="-5" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0005" x="2884" y="608" width="329" height="599" frameX="-1" frameY="-5" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0006" x="3223" y="608" width="325" height="602" frameX="-1" frameY="-2" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0007" x="3223" y="608" width="325" height="602" frameX="-1" frameY="-2" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0008" x="3558" y="608" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0009" x="3558" y="608" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0010" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0011" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0012" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0013" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0014" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0015" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0016" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0017" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0018" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0019" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0020" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0021" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0022" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0023" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious right note0024" x="10" y="1224" width="325" height="598" frameX="-1" frameY="-6" frameWidth="330" frameHeight="604"/>
+	<SubTexture name="furious up note0000" x="345" y="1224" width="353" height="620" frameX="-2" frameY="0" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0001" x="345" y="1224" width="353" height="620" frameX="-2" frameY="0" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0002" x="708" y="1224" width="361" height="618" frameX="0" frameY="-2" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0003" x="708" y="1224" width="361" height="618" frameX="0" frameY="-2" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0004" x="1079" y="1224" width="335" height="618" frameX="-15" frameY="-2" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0005" x="1079" y="1224" width="335" height="618" frameX="-15" frameY="-2" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0006" x="1424" y="1224" width="341" height="618" frameX="-11" frameY="-2" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0007" x="1424" y="1224" width="341" height="618" frameX="-11" frameY="-2" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0008" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0009" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0010" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0011" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0012" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0013" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0014" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0015" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0016" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0017" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0018" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0019" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0020" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0021" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0022" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0023" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="furious up note0024" x="1775" y="1224" width="341" height="619" frameX="-11" frameY="-1" frameWidth="361" frameHeight="620"/>
+	<SubTexture name="glitch down note0000" x="2126" y="1224" width="299" height="556" frameX="-11" frameY="0" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0001" x="2126" y="1224" width="299" height="556" frameX="-11" frameY="0" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0002" x="2435" y="1224" width="297" height="553" frameX="-5" frameY="-3" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0003" x="2435" y="1224" width="297" height="553" frameX="-5" frameY="-3" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0004" x="2742" y="1224" width="325" height="544" frameX="0" frameY="-12" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0005" x="2742" y="1224" width="325" height="544" frameX="0" frameY="-12" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0006" x="3077" y="1224" width="297" height="552" frameX="-5" frameY="-4" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0007" x="3077" y="1224" width="297" height="552" frameX="-5" frameY="-4" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0008" x="3384" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0009" x="3384" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0010" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0011" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0012" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0013" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0014" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0015" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0016" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0017" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0018" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0019" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0020" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0021" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0022" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0023" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch down note0024" x="3662" y="1224" width="268" height="549" frameX="-29" frameY="-7" frameWidth="325" frameHeight="556"/>
+	<SubTexture name="glitch idle0000" x="10" y="1854" width="305" height="582" frameX="-36" frameY="-6" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0001" x="10" y="1854" width="305" height="582" frameX="-36" frameY="-6" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0002" x="325" y="1854" width="355" height="580" frameX="0" frameY="-8" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0003" x="325" y="1854" width="355" height="580" frameX="0" frameY="-8" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0004" x="690" y="1854" width="357" height="583" frameX="-5" frameY="-5" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0005" x="690" y="1854" width="357" height="583" frameX="-5" frameY="-5" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0006" x="1057" y="1854" width="316" height="588" frameX="-31" frameY="0" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0007" x="1383" y="1854" width="276" height="588" frameX="-48" frameY="0" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0008" x="1669" y="1854" width="287" height="588" frameX="-42" frameY="0" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0009" x="1966" y="1854" width="269" height="588" frameX="-49" frameY="0" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0010" x="2245" y="1854" width="302" height="588" frameX="-31" frameY="0" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0011" x="2557" y="1854" width="269" height="588" frameX="-49" frameY="0" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0012" x="2836" y="1854" width="270" height="588" frameX="-48" frameY="0" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch idle0013" x="3116" y="1854" width="269" height="588" frameX="-49" frameY="0" frameWidth="362" frameHeight="588"/>
+	<SubTexture name="glitch left note0000" x="3395" y="1854" width="319" height="595" frameX="-8" frameY="-4" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0001" x="3395" y="1854" width="319" height="595" frameX="-8" frameY="-4" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0002" x="3724" y="1854" width="316" height="606" frameX="-5" frameY="0" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0003" x="3724" y="1854" width="316" height="606" frameX="-5" frameY="0" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0004" x="10" y="2470" width="352" height="600" frameX="0" frameY="-6" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0005" x="10" y="2470" width="352" height="600" frameX="0" frameY="-6" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0006" x="372" y="2470" width="323" height="605" frameX="-5" frameY="-1" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0007" x="372" y="2470" width="323" height="605" frameX="-5" frameY="-1" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0008" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0009" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0010" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0011" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0012" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0013" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0014" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0015" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0016" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0017" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0018" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0019" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0020" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0021" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0022" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0023" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch left note0024" x="705" y="2470" width="273" height="603" frameX="-31" frameY="-3" frameWidth="352" frameHeight="606"/>
+	<SubTexture name="glitch right note0000" x="988" y="2470" width="384" height="600" frameX="0" frameY="-4" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0001" x="988" y="2470" width="384" height="600" frameX="0" frameY="-4" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0002" x="1382" y="2470" width="361" height="604" frameX="-12" frameY="0" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0003" x="1382" y="2470" width="361" height="604" frameX="-12" frameY="0" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0004" x="1753" y="2470" width="393" height="599" frameX="-19" frameY="-5" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0005" x="1753" y="2470" width="393" height="599" frameX="-19" frameY="-5" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0006" x="2156" y="2470" width="361" height="602" frameX="-26" frameY="-2" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0007" x="2156" y="2470" width="361" height="602" frameX="-26" frameY="-2" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0008" x="2527" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0009" x="2527" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0010" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0011" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0012" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0013" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0014" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0015" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0016" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0017" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0018" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0019" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0020" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0021" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0022" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0023" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch right note0024" x="2862" y="2470" width="325" height="598" frameX="-41" frameY="-6" frameWidth="412" frameHeight="604"/>
+	<SubTexture name="glitch up note0000" x="3197" y="2470" width="395" height="620" frameX="-5" frameY="0" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0001" x="3197" y="2470" width="395" height="620" frameX="-5" frameY="0" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0002" x="3602" y="2470" width="374" height="618" frameX="-13" frameY="-2" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0003" x="3602" y="2470" width="374" height="618" frameX="-13" frameY="-2" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0004" x="10" y="3100" width="376" height="618" frameX="-10" frameY="-2" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0005" x="10" y="3100" width="376" height="618" frameX="-10" frameY="-2" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0006" x="396" y="3100" width="396" height="618" frameX="0" frameY="-2" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0007" x="396" y="3100" width="396" height="618" frameX="0" frameY="-2" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0008" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0009" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0010" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0011" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0012" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0013" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0014" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0015" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0016" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0017" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0018" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0019" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0020" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0021" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0022" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0023" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+	<SubTexture name="glitch up note0024" x="802" y="3100" width="341" height="619" frameX="-28" frameY="-1" frameWidth="400" frameHeight="620"/>
+</TextureAtlas>

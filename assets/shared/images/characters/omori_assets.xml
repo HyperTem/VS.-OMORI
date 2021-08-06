@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="omori_assets.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="omori down note0000" x="10" y="10" width="231" height="557" frameX="-6" frameY="-5" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0001" x="10" y="10" width="231" height="557" frameX="-6" frameY="-5" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0002" x="251" y="10" width="260" height="547" frameX="-7" frameY="-15" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0003" x="251" y="10" width="260" height="547" frameX="-7" frameY="-15" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0004" x="521" y="10" width="248" height="556" frameX="-7" frameY="-6" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0005" x="521" y="10" width="248" height="556" frameX="-7" frameY="-6" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0006" x="779" y="10" width="247" height="562" frameX="0" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0007" x="779" y="10" width="247" height="562" frameX="0" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0008" x="1036" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0009" x="1036" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0010" x="1289" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0011" x="1289" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0012" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0013" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0014" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0015" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0016" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0017" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0018" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0019" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0020" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0021" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0022" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0023" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori down note0024" x="1542" y="10" width="243" height="562" frameX="-6" frameY="0" frameWidth="267" frameHeight="562"/>
+	<SubTexture name="omori idle0000" x="1795" y="10" width="223" height="587" frameX="-2" frameY="-20" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0001" x="1795" y="10" width="223" height="587" frameX="-2" frameY="-20" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0002" x="2028" y="10" width="224" height="585" frameX="0" frameY="-22" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0003" x="2028" y="10" width="224" height="585" frameX="0" frameY="-22" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0004" x="2262" y="10" width="219" height="593" frameX="-4" frameY="-14" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0005" x="2262" y="10" width="219" height="593" frameX="-4" frameY="-14" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0006" x="2491" y="10" width="213" height="606" frameX="-10" frameY="-1" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0007" x="2491" y="10" width="213" height="606" frameX="-10" frameY="-1" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0008" x="2714" y="10" width="215" height="606" frameX="-8" frameY="-1" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0009" x="2939" y="10" width="215" height="606" frameX="-8" frameY="-1" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0010" x="3164" y="10" width="215" height="607" frameX="-8" frameY="0" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0011" x="3389" y="10" width="215" height="607" frameX="-8" frameY="0" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0012" x="3614" y="10" width="215" height="607" frameX="-8" frameY="0" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori idle0013" x="3614" y="10" width="215" height="607" frameX="-8" frameY="0" frameWidth="225" frameHeight="607"/>
+	<SubTexture name="omori left note0000" x="3839" y="10" width="234" height="589" frameX="-33" frameY="-8" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0001" x="3839" y="10" width="234" height="589" frameX="-33" frameY="-8" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0002" x="10" y="627" width="258" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0003" x="10" y="627" width="258" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0004" x="278" y="627" width="274" height="607"/>
+	<SubTexture name="omori left note0005" x="278" y="627" width="274" height="607"/>
+	<SubTexture name="omori left note0006" x="562" y="627" width="253" height="598" frameX="-18" frameY="-9" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0007" x="562" y="627" width="253" height="598" frameX="-18" frameY="-9" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0008" x="825" y="627" width="261" height="601" frameX="-11" frameY="-6" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0009" x="825" y="627" width="261" height="601" frameX="-11" frameY="-6" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0010" x="1096" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0011" x="1096" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0012" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0013" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0014" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0015" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0016" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0017" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0018" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0019" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0020" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0021" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0022" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0023" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori left note0024" x="1367" y="627" width="261" height="600" frameX="-11" frameY="-7" frameWidth="274" frameHeight="607"/>
+	<SubTexture name="omori right note0000" x="1638" y="627" width="297" height="598" frameX="0" frameY="0" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0001" x="1638" y="627" width="297" height="598" frameX="0" frameY="0" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0002" x="1945" y="627" width="306" height="590" frameX="-1" frameY="-8" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0003" x="1945" y="627" width="306" height="590" frameX="-1" frameY="-8" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0004" x="2261" y="627" width="290" height="589" frameX="-1" frameY="-9" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0005" x="2261" y="627" width="290" height="589" frameX="-1" frameY="-9" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0006" x="2561" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0007" x="2561" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0008" x="2869" y="627" width="298" height="589" frameX="-1" frameY="-9" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0009" x="2869" y="627" width="298" height="589" frameX="-1" frameY="-9" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0010" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0011" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0012" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0013" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0014" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0015" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0016" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0017" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0018" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0019" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0020" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0021" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0022" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0023" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori right note0024" x="3177" y="627" width="298" height="592" frameX="-1" frameY="-6" frameWidth="307" frameHeight="598"/>
+	<SubTexture name="omori up note0000" x="3485" y="627" width="307" height="616" frameX="-23" frameY="-7" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0001" x="3485" y="627" width="307" height="616" frameX="-23" frameY="-7" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0002" x="10" y="1253" width="324" height="623" frameX="0" frameY="0" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0003" x="10" y="1253" width="324" height="623" frameX="0" frameY="0" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0004" x="344" y="1253" width="271" height="609" frameX="-51" frameY="-14" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0005" x="344" y="1253" width="271" height="609" frameX="-51" frameY="-14" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0006" x="625" y="1253" width="293" height="617" frameX="-31" frameY="-6" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0007" x="625" y="1253" width="293" height="617" frameX="-31" frameY="-6" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0008" x="928" y="1253" width="290" height="612" frameX="-34" frameY="-11" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0009" x="928" y="1253" width="290" height="612" frameX="-34" frameY="-11" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0010" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0011" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0012" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0013" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0014" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0015" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0016" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0017" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0018" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0019" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0020" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0021" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0022" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0023" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+	<SubTexture name="omori up note0024" x="1228" y="1253" width="290" height="613" frameX="-34" frameY="-10" frameWidth="330" frameHeight="623"/>
+</TextureAtlas>
