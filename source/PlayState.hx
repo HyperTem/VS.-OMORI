@@ -108,6 +108,7 @@ class PlayState extends MusicBeatState
 	public static var boyfriend:Boyfriend;
 
 	public static var furious:Character;
+	public static var healHeart:FlxSprite;
 
 	public var notes:FlxTypedGroup<Note>;
 	private var unspawnNotes:Array<Note> = [];
@@ -491,11 +492,6 @@ class PlayState extends MusicBeatState
 		}
 
 		add(gf);
-
-		// Shitty layering but whatev it works LOL
-		if (curStage == 'limo')
-			add(limo);
-
 		add(dad);
 		add(boyfriend);
 
@@ -641,6 +637,14 @@ class PlayState extends MusicBeatState
 
 		furiousIcon = new HealthIcon('furiousomori');
 		furiousIcon.y = healthBar.y - (furiousIcon.height / 2);
+
+		//Set up for heart effect in reverie
+		healHeart = new FlxSprite(0,0);
+		healHeart.frames = Paths.getSparrowAtlas('heal', 'omori');
+		healHeart.animation.addByPrefix('heal', 'heal', 24, false);
+		healHeart.setGraphicSize(Std.int((healHeart.width) * 0.8));
+		add(healHeart);
+		healHeart.cameras = [camHUD];
 
 		strumLineNotes.cameras = [camHUD];
 		notes.cameras = [camHUD];
@@ -1405,22 +1409,6 @@ class PlayState extends MusicBeatState
 				iconP1.animation.play('bf-old');
 		}
 
-		switch (curStage)
-		{
-			case 'philly':
-				if (trainMoving)
-				{
-					trainFrameTiming += elapsed;
-
-					if (trainFrameTiming >= 1 / 24)
-					{
-						updateTrainPos();
-						trainFrameTiming = 0;
-					}
-				}
-				// phillyCityLights.members[curLight].alpha -= (Conductor.crochet / 1000) * FlxG.elapsed;
-		}
-
 		super.update(elapsed);
 
 		scoreTxt.text = Ratings.CalculateRanking(songScore,songScoreDef,nps,maxNPS,accuracy);
@@ -1481,6 +1469,10 @@ class PlayState extends MusicBeatState
 			iconP2.animation.curAnim.curFrame = 1;
 		else
 			iconP2.animation.curAnim.curFrame = 0;
+
+		//so the heal effect is always moving to omori's icon, slightly offset for reasons
+		healHeart.x =  iconP2.x - 25;
+		healHeart.y =  iconP2.y - 25;
 
 		/* if (FlxG.keys.justPressed.NINE)
 			FlxG.switchState(new Charting()); */
@@ -1551,101 +1543,7 @@ class PlayState extends MusicBeatState
 
 		if (generatedMusic && PlayState.SONG.notes[Std.int(curStep / 16)] != null)
 		{
-			// Make sure Girlfriend cheers only for certain songs
-			if(allowedToHeadbang)
-			{
-				// Don't animate GF if something else is already animating her (eg. train passing)
-				if(gf.animation.curAnim.name == 'danceLeft' || gf.animation.curAnim.name == 'danceRight' || gf.animation.curAnim.name == 'idle')
-				{
-					// Per song treatment since some songs will only have the 'Hey' at certain times
-					switch(curSong)
-					{
-						case 'Philly':
-						{
-							// General duration of the song
-							if(curBeat < 250)
-							{
-								// Beats to skip or to stop GF from cheering
-								if(curBeat != 184 && curBeat != 216)
-								{
-									if(curBeat % 16 == 8)
-									{
-										// Just a garantee that it'll trigger just once
-										if(!triggeredAlready)
-										{
-											gf.playAnim('cheer');
-											triggeredAlready = true;
-										}
-									}else triggeredAlready = false;
-								}
-							}
-						}
-						case 'Bopeebo':
-						{
-							// Where it starts || where it ends
-							if(curBeat > 5 && curBeat < 130)
-							{
-								if(curBeat % 8 == 7)
-								{
-									if(!triggeredAlready)
-									{
-										gf.playAnim('cheer');
-										triggeredAlready = true;
-									}
-								}else triggeredAlready = false;
-							}
-						}
-						case 'Blammed':
-						{
-							if(curBeat > 30 && curBeat < 190)
-							{
-								if(curBeat < 90 || curBeat > 128)
-								{
-									if(curBeat % 4 == 2)
-									{
-										if(!triggeredAlready)
-										{
-											gf.playAnim('cheer');
-											triggeredAlready = true;
-										}
-									}else triggeredAlready = false;
-								}
-							}
-						}
-						case 'Cocoa':
-						{
-							if(curBeat < 170)
-							{
-								if(curBeat < 65 || curBeat > 130 && curBeat < 145)
-								{
-									if(curBeat % 16 == 15)
-									{
-										if(!triggeredAlready)
-										{
-											gf.playAnim('cheer');
-											triggeredAlready = true;
-										}
-									}else triggeredAlready = false;
-								}
-							}
-						}
-						case 'Eggnog':
-						{
-							if(curBeat > 10 && curBeat != 111 && curBeat < 220)
-							{
-								if(curBeat % 8 == 7)
-								{
-									if(!triggeredAlready)
-									{
-										gf.playAnim('cheer');
-										triggeredAlready = true;
-									}
-								}else triggeredAlready = false;
-							}
-						}
-					}
-				}
-			}
+			// This place was previously the "Hey" code for bf -Stahl
 			
 			#if windows
 			if (luaModchart != null)
@@ -1672,18 +1570,10 @@ class PlayState extends MusicBeatState
 
 				switch (dad.curCharacter)
 				{
+					//this is for dad side camera, i left one as example -stahl
 					case 'mom':
 						camFollow.y = dad.getMidpoint().y;
-					case 'senpai':
-						camFollow.y = dad.getMidpoint().y - 430;
-						camFollow.x = dad.getMidpoint().x - 100;
-					case 'senpai-angry':
-						camFollow.y = dad.getMidpoint().y - 430;
-						camFollow.x = dad.getMidpoint().x - 100;
 				}
-
-				if (dad.curCharacter == 'mom')
-					vocals.volume = 1;
 			}
 
 			if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && camFollow.x != boyfriend.getMidpoint().x - 100)
@@ -1706,16 +1596,9 @@ class PlayState extends MusicBeatState
 
 				switch (curStage)
 				{
+					//this is for stage side camera, i left one as example -stahl
 					case 'limo':
 						camFollow.x = boyfriend.getMidpoint().x - 300;
-					case 'mall':
-						camFollow.y = boyfriend.getMidpoint().y - 200;
-					case 'school':
-						camFollow.x = boyfriend.getMidpoint().x - 200;
-						camFollow.y = boyfriend.getMidpoint().y - 200;
-					case 'schoolEvil':
-						camFollow.x = boyfriend.getMidpoint().x - 200;
-						camFollow.y = boyfriend.getMidpoint().y - 200;
 				}
 			}
 		}
@@ -1728,36 +1611,6 @@ class PlayState extends MusicBeatState
 
 		FlxG.watch.addQuick("beatShit", curBeat);
 		FlxG.watch.addQuick("stepShit", curStep);
-
-		if (curSong == 'Fresh')
-		{
-			switch (curBeat)
-			{
-				case 16:
-					camZooming = true;
-					gfSpeed = 2;
-				case 48:
-					gfSpeed = 1;
-				case 80:
-					gfSpeed = 2;
-				case 112:
-					gfSpeed = 1;
-				case 163:
-					// FlxG.sound.music.stop();
-					// FlxG.switchState(new TitleState());
-			}
-		}
-
-		if (curSong == 'Bopeebo')
-		{
-			switch (curBeat)
-			{
-				case 128, 129, 130:
-					vocals.volume = 0;
-					// FlxG.sound.music.stop();
-					// FlxG.switchState(new PlayState());
-			}
-		}
 
 		if (health <= 0)
 		{
@@ -2850,103 +2703,35 @@ class PlayState extends MusicBeatState
 			}
 		
 
-	var fastCarCanDrive:Bool = true;
+	//this section was Mom's car, Philly train, Spooky Thunder functions -stahl
 
-	function resetFastCar():Void
-	{
-		if(FlxG.save.data.distractions){
-			fastCar.x = -12600;
-			fastCar.y = FlxG.random.int(140, 250);
-			fastCar.velocity.x = 0;
-			fastCarCanDrive = true;
+	//reusing one sprite to avoid cramming too much sprite, also in stephit because its not always on perfect beat
+	function healAnim(){
+		healHeart.animation.play('heal', true);
+		//damage based on difficulty, and is multiplicative just meaning damage scales over remaining health
+		switch (storyDifficulty)
+		{
+			case 0:
+				health = health * 0.92; //8% damage on easy
+			case 1:
+				health = health * 0.88; //12% damaage on normal
+			case 2:
+				health = health * 0.84; //16% damage on hard
+			default:
+				health = health * 0.88; //12% damage on default if its some weird custom difficulty lol
 		}
 	}
-
-	function fastCarDrive()
-	{
-		if(FlxG.save.data.distractions){
-			FlxG.sound.play(Paths.soundRandom('carPass', 0, 1), 0.7);
-
-			fastCar.velocity.x = (FlxG.random.int(170, 220) / FlxG.elapsed) * 3;
-			fastCarCanDrive = false;
-			new FlxTimer().start(2, function(tmr:FlxTimer)
-			{
-				resetFastCar();
-			});
-		}
-	}
-
-	var trainMoving:Bool = false;
-	var trainFrameTiming:Float = 0;
-
-	var trainCars:Int = 8;
-	var trainFinishing:Bool = false;
-	var trainCooldown:Int = 0;
-
-	function trainStart():Void
-	{
-		if(FlxG.save.data.distractions){
-		trainMoving = true;
-		if (!trainSound.playing)
-			trainSound.play(true);
-		}
-	}
-
-	var startedMoving:Bool = false;
-
-	function updateTrainPos():Void
-	{
-		if(FlxG.save.data.distractions){
-			if (trainSound.time >= 4700)
-				{
-					startedMoving = true;
-					gf.playAnim('hairBlow');
-				}
-		
-				if (startedMoving)
-				{
-					phillyTrain.x -= 400;
-		
-					if (phillyTrain.x < -2000 && !trainFinishing)
-					{
-						phillyTrain.x = -1150;
-						trainCars -= 1;
-		
-						if (trainCars <= 0)
-							trainFinishing = true;
-					}
-		
-					if (phillyTrain.x < -4000 && trainFinishing)
-						trainReset();
-				}
-		}
-
-	}
-
-	function trainReset():Void
-	{
-		if(FlxG.save.data.distractions){
-			gf.playAnim('hairFall');
-			phillyTrain.x = FlxG.width + 200;
-			trainMoving = false;
-			// trainSound.stop();
-			// trainSound.time = 0;
-			trainCars = 8;
-			trainFinishing = false;
-			startedMoving = false;
-		}
-	}
-
-	function lightningStrikeShit():Void
-	{
-		FlxG.sound.play(Paths.soundRandom('thunder_', 1, 2));
-		halloweenBG.animation.play('lightning');
-
-		lightningStrikeBeat = curBeat;
-		lightningOffset = FlxG.random.int(8, 24);
-
-		boyfriend.playAnim('scared', true);
-		gf.playAnim('scared', true);
+	// annoy is now a function
+	function annoy(x, y){
+		var sprite = new FlxSprite(0, 0);
+		sprite.frames = Paths.getSparrowAtlas('annoy', 'omori');
+		sprite.animation.addByPrefix('bump', 'logo bumpin', 24, false);
+		sprite.setGraphicSize(Std.int((sprite.width) * 2));
+		sprite.screenCenter();
+		sprite.x += x;
+		sprite.y += y;
+		add(sprite);
+		sprite.animation.play('bump');
 	}
 
 	override function stepHit()
@@ -2965,12 +2750,6 @@ class PlayState extends MusicBeatState
 		}
 		#end
 
-		if (dad.curCharacter == 'spooky' && curStep % 4 == 2)
-		{
-			// dad.dance();
-		}
-
-
 		// yes this updates every step.
 		// yes this is bad
 		// but i'm doing it to update misses and accuracy
@@ -2981,11 +2760,33 @@ class PlayState extends MusicBeatState
 		// Updating Discord Rich Presence (with Time Left)
 		DiscordClient.changePresence(detailsText + " " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy), "Acc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses  , iconRPC,true,  songLength - Conductor.songPosition);
 		#end
+		
+		//reverie healing because i was bored lol, can always comment this out -Stahl
+		if (curSong.toLowerCase() == 'reverie')
+		{
+			switch (curStep)
+			{
+				//heal, first 2 
+				case 80 | 84:
+					healAnim();
+				case 376 | 380 | 408 | 412 | 440 | 444 | 472 | 476:
+					healAnim();		
+				//common used pattern from here, "more intense"
+				case 704 | 708 | 726 | 730 | 734 | 736 | 740:
+					healAnim();
+				//same, add 64
+				case 768 | 772 | 790 | 794 | 798 | 800 | 804:
+					healAnim();
+				//same, add 192
+				case 960 | 964 | 982 | 986 | 990 | 992 | 996:
+					healAnim();
+				//same, add 64
+				case 1024 | 1028 | 1046 | 1050 | 1054 | 1056 | 1060:
+					healAnim();
+			}
+		}
 
 	}
-
-	var lightningStrikeBeat:Int = 0;
-	var lightningOffset:Int = 8;
 
 	override function beatHit()
 	{
@@ -3021,86 +2822,52 @@ class PlayState extends MusicBeatState
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 		wiggleShit.update(Conductor.crochet);
 
-		// HARDCODING FOR MILF ZOOMS!
-		if (curSong.toLowerCase() == 'milf' && curBeat >= 168 && curBeat < 200 && camZooming && FlxG.camera.zoom < 1.35)
-		{
-			FlxG.camera.zoom += 0.015;
-			camHUD.zoom += 0.03;
-		}
 
 		// Hardcoding for Guilty! stuff because I don't know how lua modcharting works lol
-		if (curSong.toLowerCase() == 'guilty' && curStep == 560 && dad != furious)
-		{
-			replace(dad, furious);
-			dad = furious;
-			dad.x += 142;
-			dad.y += 168;
-			camFollow.setPosition(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
 
-			furiousIcon.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (furiousIcon.width - 26);
-			furiousIcon.animation.curAnim.curFrame = iconP2.animation.curAnim.curFrame;
-			furiousIcon.scale.set(iconP2.scale.x, iconP2.scale.y);
-			furiousIcon.updateHitbox();
+		// I changed it to case system instead of using like a thousand else ifs  (yanderedev time) -Stahl
+		//also give annoy its own function because it's way too big lol
+		if (curSong.toLowerCase() == 'guilty')
+		{
+			switch (curStep)
+			{
+				//annoy pop-up
+				case 544:
+					FlxG.sound.play(Paths.sound('annoy'));
+					annoy(-230, 350);
+				case 548:
+					annoy(-200, 240);
+				case 552:
+					annoy(-280, 170);
+				case 556:
+					annoy(-230, 50);
+				
+				//Amore gets anger issues
+				case 560:
+					replace(dad, furious);
+					dad = furious;
+					dad.x += 142;
+					dad.y += 168;
+					camFollow.setPosition(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
 
-			replace(iconP2, furiousIcon);
-			iconP2 = furiousIcon;
+					furiousIcon.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (furiousIcon.width - 26);
+					furiousIcon.animation.curAnim.curFrame = iconP2.animation.curAnim.curFrame;
+					furiousIcon.scale.set(iconP2.scale.x, iconP2.scale.y);
+					furiousIcon.updateHitbox();
+
+					replace(iconP2, furiousIcon);
+					iconP2 = furiousIcon;
+				
+				//blacksceen
+				case 2777:
+					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
+					add(blackScreen);
+					blackScreen.scrollFactor.set();
+					camHUD.visible = false;
+			}
 		}
-		if (curSong.toLowerCase() == 'guilty' && curStep == 544)
-		{
-			var annoy1 = new FlxSprite(0, 0);
-			annoy1.frames = Paths.getSparrowAtlas('annoy', 'omori');
-			annoy1.animation.addByPrefix('bump', 'logo bumpin', 24, false);
-			annoy1.setGraphicSize(Std.int((annoy1.width) * 2));
-			annoy1.screenCenter();
-			annoy1.x -= 230;
-			annoy1.y += 350;
-			add(annoy1);
-			annoy1.animation.play('bump');
-			FlxG.sound.play(Paths.sound('annoy'));
-		}
-		if (curSong.toLowerCase() == 'guilty' && curStep == 548)
-		{
-			var annoy2 = new FlxSprite(0, 0);
-			annoy2.frames = Paths.getSparrowAtlas('annoy', 'omori');
-			annoy2.animation.addByPrefix('bump', 'logo bumpin', 24, false);
-			annoy2.setGraphicSize(Std.int((annoy2.width) * 2));
-			annoy2.screenCenter();
-			annoy2.x -= 200;
-			annoy2.y += 240;
-			add(annoy2);
-			annoy2.animation.play('bump');
-		}
-		if (curSong.toLowerCase() == 'guilty' && curStep == 552)
-		{
-			var annoy3 = new FlxSprite(0, 0);
-			annoy3.frames = Paths.getSparrowAtlas('annoy', 'omori');
-			annoy3.animation.addByPrefix('bump', 'logo bumpin', 24, false);
-			annoy3.setGraphicSize(Std.int((annoy3.width) * 2));
-			annoy3.screenCenter();
-			annoy3.x -= 280;
-			annoy3.y += 170;
-			add(annoy3);
-			annoy3.animation.play('bump');
-		}
-		if (curSong.toLowerCase() == 'guilty' && curStep == 556)
-		{
-			var annoy4 = new FlxSprite(0, 0);
-			annoy4.frames = Paths.getSparrowAtlas('annoy', 'omori');
-			annoy4.animation.addByPrefix('bump', 'logo bumpin', 24, false);
-			annoy4.setGraphicSize(Std.int((annoy4.width) * 2));
-			annoy4.screenCenter();
-			annoy4.x -= 230;
-			annoy4.y += 50;
-			add(annoy4);
-			annoy4.animation.play('bump');
-		}
-		if (curSong.toLowerCase() == 'guilty' && curStep == 2777)
-		{
-			var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
-			add(blackScreen);
-			blackScreen.scrollFactor.set();
-			camHUD.visible = false;
-		}
+
+		//zooms
 		if (curSong.toLowerCase() == 'guilty' && curStep >= 1408 && curStep < 1664 && camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0)
 		{
 			FlxG.camera.zoom += 0.015;
@@ -3139,11 +2906,6 @@ class PlayState extends MusicBeatState
 			dad.dance();
 		}
 
-		if (curBeat % 8 == 7 && curSong == 'Bopeebo')
-		{
-			boyfriend.playAnim('hey', true);
-		}
-
 		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
 			{
 				boyfriend.playAnim('hey', true);
@@ -3152,68 +2914,11 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
-			case 'school':
-				if(FlxG.save.data.distractions){
-					bgGirls.dance();
-				}
-
-			case 'mall':
-				if(FlxG.save.data.distractions){
-					upperBoppers.animation.play('bop', true);
-					bottomBoppers.animation.play('bop', true);
-					santa.animation.play('idle', true);
-				}
-
-			case 'limo':
-				if(FlxG.save.data.distractions){
-					grpLimoDancers.forEach(function(dancer:BackgroundDancer)
-						{
-							dancer.dance();
-						});
-		
-						if (FlxG.random.bool(10) && fastCarCanDrive)
-							fastCarDrive();
-				}
-			case "philly":
-				if(FlxG.save.data.distractions){
-					if (!trainMoving)
-						trainCooldown += 1;
-	
-					if (curBeat % 4 == 0)
-					{
-						phillyCityLights.forEach(function(light:FlxSprite)
-						{
-							light.visible = false;
-						});
-	
-						curLight = FlxG.random.int(0, phillyCityLights.length - 1);
-	
-						phillyCityLights.members[curLight].visible = true;
-						// phillyCityLights.members[curLight].alpha = 1;
-				}
-
-				}
-
-				if (curBeat % 8 == 4 && FlxG.random.bool(30) && !trainMoving && trainCooldown > 8)
-				{
-					if(FlxG.save.data.distractions){
-						trainCooldown = FlxG.random.int(-4, 0);
-						trainStart();
-					}
-				}
 			case 'whitespace':
 				if(FlxG.save.data.distractions){
 					bgMewo.dance();
 				}
 		}
-
-		if (isHalloween && FlxG.random.bool(10) && curBeat > lightningStrikeBeat + lightningOffset)
-		{
-			if(FlxG.save.data.distractions){
-				lightningStrikeShit();
-			}
-		}
 	}
-
 	var curLight:Int = 0;
 }
